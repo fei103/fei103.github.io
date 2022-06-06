@@ -2,19 +2,51 @@
 <html>
 	<head>
 		<title>This is the title</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="mystyle.css">		
 	</head>
-	<body>
-		<div>
-			<h1>Hello!<h1>
-			<br>
-			<p style="background-color:#C4E1FF">What to eat today?.</p>
+	<body><!--background color-->
+		<div><!--hover-->
+			<h1><b>Nice to meet you.</b></h1><!--對第一個字母做設定-->
+			<button onclick="eat()">eat!</button>
+			<p id="result"></p>
+
+			<hr color="white">
+
+			<p style="background-color:#B9B9FF;color:white">What to eat today?.</p><!--div後第一個的大小位置-->
 			<ul>
-				<li>pizza?</li>
-				<li>ramen?</li>
-				<li>hotpot?</li>
+				<li><a href="https://www.pizzahut.com.tw/" target="_blank">pizza?</a></li><!--a visited變色-->
+				<li><a href="https://www.facebook.com/ichiran.tw/" target="_blank">ramen?</a></li>
+				<li><a href="https://www.12hotpot.com.tw/" target="_blank">hotpot?</a></li>
 			</ul>
 			<br>
-			
 		</div>
+		<table border="1">
+			<tr>
+				<th>pizza</th>
+				<th>ramen</th>
+				<th>hotpot</th>
+			</tr>
+			<tr>
+				<td>好吃!</td>
+				<td>更好吃!</td>
+				<td>超好吃!</td>
+			</tr>
+		</table>
+		<script>
+			onload=showmsg();
+			function showmsg() {
+				alert('Hello to the page');
+			}
+			function eat() {
+				var msg;
+				if (confirm("你餓了嗎")) {
+					msg = "多吃點";
+				} else {
+					msg = "那休息一下";
+				}
+				document.getElementById("result").innerHTML = msg;
+			}
+		</script>
 	</body>
 </html>
